@@ -31,7 +31,7 @@ export default function Upload(props) {
           content={
             <Box>
               <Icon as={MdUpload} w='80px' h='80px' color={brandColor} />
-              <Flex justify='center' mx='auto' mb='12px'>
+              <Flex justify='center' mx='auto' mb='18px'>
                 <Text fontSize='xl' fontWeight='700' color={brandColor}>
                   Upload Files
                 </Text>

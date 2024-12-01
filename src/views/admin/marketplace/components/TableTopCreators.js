@@ -40,7 +40,7 @@ export default function TopCreatorTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           NAME
@@ -61,7 +61,7 @@ export default function TopCreatorTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           ARTWORKS
@@ -79,7 +79,7 @@ export default function TopCreatorTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           RATING
@@ -131,7 +131,7 @@ export default function TopCreatorTable(props) {
         <Button variant="action">See all</Button>
       </Flex>
       <Box>
-        <Table variant="simple" color="gray.500" mt="12px">
+        <Table variant="simple" color="gray.500" mt="18px">
           <Thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <Tr key={headerGroup.id}>
@@ -148,7 +148,7 @@ export default function TopCreatorTable(props) {
                       <Flex
                         justifyContent="space-between"
                         align="center"
-                        fontSize={{ sm: '10px', lg: '12px' }}
+                        fontSize={{ sm: '10px', lg: '18px' }}
                         color="gray.400"
                       >
                         {flexRender(

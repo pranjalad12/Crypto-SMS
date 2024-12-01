@@ -126,7 +126,7 @@ export default function AuthNavbar(props) {
         justifyContent='center'
         alignItems='center'
         color={mainText}>
-        <Stack direction='row' spacing='12px' align='center' justify='center'>
+        <Stack direction='row' spacing='18px' align='center' justify='center'>
           <Box
             w='1px'
             h='20px'
@@ -209,7 +209,7 @@ export default function AuthNavbar(props) {
                 ps='36px'
                 py='0px'
                 _hover={{ boxShadow: "none", bg: "none" }}
-                borderRadius='12px'>
+                borderRadius='18px'>
                 <Text color='gray.400' fontSize='sm' fontWeight='normal'>
                   {link.name}
                 </Text>
@@ -231,7 +231,7 @@ export default function AuthNavbar(props) {
             ps='36px'
             py='0px'
             _hover={{ boxShadow: "none", bg: "none" }}
-            borderRadius='12px'>
+            borderRadius='18px'>
             <Text color='gray.400' fontSize='sm' fontWeight='normal'>
               {link.name}
             </Text>
@@ -284,7 +284,7 @@ export default function AuthNavbar(props) {
     return routes.map((link) => {
       return (
         <NavLink to={link.layout + link.path}>
-          <Stack direction='row' spacing='12px' align='center' cursor='pointer'>
+          <Stack direction='row' spacing='18px' align='center' cursor='pointer'>
             <IconBox bg='blue.500' color='white' h='30px' w='30px'>
               {link.authIcon}
             </IconBox>
@@ -326,7 +326,7 @@ export default function AuthNavbar(props) {
                 ps='36px'
                 py='0px'
                 _hover={{ boxShadow: "none", bg: "none" }}
-                borderRadius='12px'>
+                borderRadius='18px'>
                 <Text color='gray.400' fontSize='sm' fontWeight='normal'>
                   {link.name}
                 </Text>
@@ -341,7 +341,7 @@ export default function AuthNavbar(props) {
   };
 
   const linksAuth = (
-    <HStack display={{ sm: "none", lg: "flex" }} spacing='12px'>
+    <HStack display={{ sm: "none", lg: "flex" }} spacing='18px'>
       <Stack
         direction='row'
         spacing='4px'
@@ -422,7 +422,7 @@ export default function AuthNavbar(props) {
                   borderRadius='50%'
                   h='50px'
                   w='50px'
-                  mb='12px'>
+                  mb='18px'>
                   <Icon as={AiFillStar} w='25px' h='25px' color='blue.500' />
                 </IconBox>
                 <Text
@@ -543,7 +543,7 @@ export default function AuthNavbar(props) {
               logo={
                 <Stack
                   direction='row'
-                  spacing='12px'
+                  spacing='18px'
                   align='center'
                   justify='center'>
                   <Box

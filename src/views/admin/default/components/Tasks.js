@@ -27,7 +27,7 @@ export default function Conversion(props) {
     <Card p='20px' align='center' direction='column' w='100%' {...rest}>
       <Flex alignItems='center' w='100%' mb='30px'>
         <IconBox
-          me='12px'
+          me='18px'
           w='38px'
           h='38px'
           bg={boxBg}

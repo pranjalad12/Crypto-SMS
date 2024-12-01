@@ -15,12 +15,12 @@ export const barChartOptionsDailyTraffic = {
   },
   tooltip: {
     style: {
-      fontSize: "12px",
+      fontSize: "18px",
       fontFamily: undefined,
     },
     onDatasetHover: {
       style: {
-        fontSize: "12px",
+        fontSize: "18px",
         fontFamily: undefined,
       },
     },
@@ -129,12 +129,12 @@ export const barChartOptionsConsumption = {
   },
   tooltip: {
     style: {
-      fontSize: "12px",
+      fontSize: "18px",
       fontFamily: undefined,
     },
     onDatasetHover: {
       style: {
-        fontSize: "12px",
+        fontSize: "18px",
         fontFamily: undefined,
       },
     },
@@ -308,7 +308,7 @@ export const lineChartOptionsTotalSpent = {
     labels: {
       style: {
         colors: "#A3AED0",
-        fontSize: "12px",
+        fontSize: "18px",
         fontWeight: "500",
       },
     },

@@ -62,16 +62,16 @@ export default function AdminNavbar(props) {
 			mx='auto'
 			mt={secondaryMargin}
 			pb='8px'
-			right={{ base: '12px', md: '30px', lg: '30px', xl: '30px' }}
+			right={{ base: '18px', md: '30px', lg: '30px', xl: '30px' }}
 			px={{
 				sm: paddingX,
 				md: '10px'
 			}}
 			ps={{
-				xl: '12px'
+				xl: '18px'
 			}}
 			pt='8px'
-			top={{ base: '12px', md: '16px', lg: '20px', xl: '20px' }}
+			top={{ base: '18px', md: '16px', lg: '20px', xl: '20px' }}
 			w={{
 				base: 'calc(100vw - 6%)',
 				md: 'calc(100vw - 8%)',

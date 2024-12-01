@@ -42,7 +42,7 @@ export default function ComplexTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           NAME
@@ -62,7 +62,7 @@ export default function ComplexTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           STATUS
@@ -105,7 +105,7 @@ export default function ComplexTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           DeFi
@@ -123,7 +123,7 @@ export default function ComplexTable(props) {
         <Text
           justifyContent="space-between"
           align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
+          fontSize={{ sm: '10px', lg: '18px' }}
           color="gray.400"
         >
           Crypto
@@ -173,7 +173,7 @@ export default function ComplexTable(props) {
         <Menu />
       </Flex>
       <Box>
-        <Table variant="simple" color="gray.500" mb="24px" mt="12px">
+        <Table variant="simple" color="gray.500" mb="24px" mt="18px">
           <Thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <Tr key={headerGroup.id}>
@@ -190,7 +190,7 @@ export default function ComplexTable(props) {
                       <Flex
                         justifyContent="space-between"
                         align="center"
-                        fontSize={{ sm: '10px', lg: '12px' }}
+                        fontSize={{ sm: '10px', lg: '18px' }}
                         color="gray.400"
                       >
                         {flexRender(

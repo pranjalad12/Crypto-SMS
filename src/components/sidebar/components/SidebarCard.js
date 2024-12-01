@@ -39,7 +39,7 @@ export default function SidebarDocs() {
       </Flex>
       <Flex
         direction='column'
-        mb='12px'
+        mb='18px'
         align='center'
         justify='center'
         px='15px'

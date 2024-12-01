@@ -42,7 +42,7 @@ function AuthIllustration(props) {
             w='fit-content'>
             <Icon
               as={FaChevronLeft}
-              me='12px'
+              me='18px'
               h='13px'
               w='8px'
               color='secondaryGray.600'

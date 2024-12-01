@@ -94,7 +94,7 @@ export default function TotalSpent(props) {
               fontSize='sm'
               fontWeight='500'
               mt='4px'
-              me='12px'>
+              me='18px'>
               Total Spent
             </Text>
             <Flex align='center'>

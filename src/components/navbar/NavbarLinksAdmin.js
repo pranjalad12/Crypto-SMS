@@ -13,22 +13,32 @@ import {
   Text,
   useColorModeValue,
   useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
 } from '@chakra-ui/react';
 // Custom Components
 import { ItemContent } from 'components/menu/ItemContent';
 import { SearchBar } from 'components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from 'components/sidebar/Sidebar';
-import PropTypes from 'prop-types';
-import React from 'react';
 // Assets
 import navImage from 'assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes';
+import PropTypes from 'prop-types'; // Add this import statement
+
+
 export default function HeaderLinks(props) {
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure(); // Modal state control
+  
   // Chakra Color Mode
   const navbarIcon = useColorModeValue('gray.400', 'white');
   let menuBg = useColorModeValue('white', 'navy.800');
@@ -43,6 +53,7 @@ export default function HeaderLinks(props) {
     '14px 17px 40px 4px rgba(112, 144, 176, 0.06)',
   );
   const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
+
   return (
     <Flex
       w={{ sm: '100%', md: 'auto' }}
@@ -64,40 +75,42 @@ export default function HeaderLinks(props) {
         me="10px"
         borderRadius="30px"
       />
-      <Flex
-        bg={ethBg}
-        display={secondary ? 'flex' : 'none'}
-        borderRadius="30px"
-        ms="auto"
-        p="6px"
-        align="center"
-        me="6px"
-      >
-        <Flex
-          align="center"
-          justify="center"
-          bg={ethBox}
-          h="29px"
-          w="29px"
-          borderRadius="30px"
-          me="7px"
+      
+      {/* Button to Open Modal */}
+      <Button variant="solid" colorScheme="teal" onClick={onOpen} mr="10px">
+        Open Modal
+      </Button>
+
+      {/* Modal */}
+      <Modal isOpen={isOpen} onClose={onClose} size="3xl" colorScheme="blackAlpha">
+        <ModalOverlay />
+        <ModalContent
+          width="100%" // Set the width of the modal to 50% of the screen
+          margin="auto" // Center the modal horizontally
+          borderRadius="20px"
+           bg="#1a1616 "
         >
-          <Icon color={ethColor} w="9px" h="14px" as={FaEthereum} />
-        </Flex>
-        <Text
-          w="max-content"
-          color={ethColor}
-          fontSize="sm"
-          fontWeight="700"
-          me="6px"
-        >
-          1,924
-          <Text as="span" display={{ base: 'none', md: 'unset' }}>
-            {' '}
-            ETH
-          </Text>
-        </Text>
-      </Flex>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalBody>
+            <Text>Content goes here. Content goes here. Content goes here. Content goes here. Content goes here.Content goes here.</Text>
+            <Text>Content goes here.</Text>
+            <Text>Content goes here.</Text>
+            <Text>Content goes here.</Text>
+            <Text>Content goes here.</Text>
+            <Text>Content goes here.</Text>
+            <Text>Content goes here.</Text>
+          </ModalBody>
+          <ModalFooter>
+            <Button variant="ghost" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button colorScheme="blue">Save</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      
+        
+      {/* Other navbar elements */}
       <SidebarResponsive routes={routes} />
       <Menu>
         <MenuButton p="0px">
@@ -158,68 +171,7 @@ export default function HeaderLinks(props) {
         </MenuList>
       </Menu>
 
-      <Menu>
-        <MenuButton p="0px">
-          <Icon
-            mt="6px"
-            as={MdInfoOutline}
-            color={navbarIcon}
-            w="18px"
-            h="18px"
-            me="10px"
-          />
-        </MenuButton>
-        <MenuList
-          boxShadow={shadow}
-          p="20px"
-          me={{ base: '30px', md: 'unset' }}
-          borderRadius="20px"
-          bg={menuBg}
-          border="none"
-          mt="28px"
-          minW={{ base: 'unset' }}
-          maxW={{ base: '360px', md: 'unset' }}
-        >
-          <Image src={navImage} borderRadius="16px" mb="28px" />
-          <Flex flexDirection="column">
-            <Link w="100%" href="https://horizon-ui.com/pro">
-              <Button w="100%" h="44px" mb="10px" variant="brand">
-                Buy Crytpo - SMS PRO
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://horizon-ui.com/documentation/docs/introduction"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                mb="10px"
-                border="1px solid"
-                bg="transparent"
-                borderColor={borderButton}
-              >
-                See Documentation
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://github.com/horizon-ui/horizon-ui-chakra-ts"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                variant="no-hover"
-                color={textColor}
-                bg="transparent"
-              >
-                Try Crytpo - SMS
-              </Button>
-            </Link>
-          </Flex>
-        </MenuList>
-      </Menu>
-
+      {/* Theme toggle button */}
       <Button
         variant="no-hover"
         bg="transparent"
@@ -238,6 +190,8 @@ export default function HeaderLinks(props) {
           as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
         />
       </Button>
+
+      {/* Profile menu */}
       <Menu>
         <MenuButton p="0px">
           <Avatar

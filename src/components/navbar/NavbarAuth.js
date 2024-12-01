@@ -100,7 +100,7 @@ export default function AuthNavbar(props) {
       justifyContent='center'
       alignItems='center'
       color={mainText}>
-      <Stack direction='row' spacing='12px' align='center' justify='center'>
+      <Stack direction='row' spacing='18px' align='center' justify='center'>
         <HorizonLogo h='26px' w='175px' color={logoColor} />
       </Stack>
       <Text fontsize='sm' mt='3px'>
@@ -249,7 +249,7 @@ export default function AuthNavbar(props) {
     });
   };
   const linksAuth = (
-    <HStack display={{ sm: "none", lg: "flex" }} spacing='12px'>
+    <HStack display={{ sm: "none", lg: "flex" }} spacing='18px'>
       <Stack
         direction='row'
         spacing='4px'
@@ -338,7 +338,7 @@ export default function AuthNavbar(props) {
                   borderRadius='50%'
                   h='50px'
                   w='50px'
-                  mb='12px'>
+                  mb='18px'>
                   <Icon as={AiFillStar} w='25px' h='25px' color='blue.500' />
                 </IconBox>
                 <Text
@@ -462,7 +462,7 @@ export default function AuthNavbar(props) {
               logo={
                 <Stack
                   direction='row'
-                  spacing='12px'
+                  spacing='18px'
                   align='center'
                   justify='center'>
                   <Box

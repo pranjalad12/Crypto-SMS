@@ -6,8 +6,8 @@ export const badgeStyles = {
         borderRadius: "10px",
         lineHeight: "100%",
         padding: "7px",
-        paddingLeft: "12px",
-        paddingRight: "12px",
+        paddingLeft: "18px",
+        paddingRight: "18px",
       },
       variants: {
         outline: () => ({

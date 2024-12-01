@@ -39,7 +39,7 @@ export function SidebarLinks(props) {
                 xl: "16px",
               }}
               pt='18px'
-              pb='12px'
+              pb='18px'
               key={index}>
               {route.name}
             </Text>

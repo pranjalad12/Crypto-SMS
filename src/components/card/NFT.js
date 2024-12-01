@@ -104,7 +104,7 @@ export default function NFT(props) {
                 xl: "10px",
                 "2xl": "0px",
               }}
-              fontSize='12px'>
+              fontSize='18px'>
               {bidders.map((avt, key) => (
                 <Avatar key={key} src={avt} />
               ))}
