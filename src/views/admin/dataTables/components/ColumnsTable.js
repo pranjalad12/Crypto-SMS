@@ -74,8 +74,8 @@ export default function ColumnTable(props) {
         </Text>
       ),
     }),
-    columnHelper.accessor('quantity', {
-      id: 'quantity',
+    columnHelper.accessor('NFTs', {
+      id: 'NFTs',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -83,7 +83,7 @@ export default function ColumnTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          QUANTITY
+          NFTs
         </Text>
       ),
       cell: (info) => (

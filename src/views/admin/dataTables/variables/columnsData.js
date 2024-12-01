@@ -27,8 +27,8 @@ export const columnsDataCheck = [
     accessor: "Crypto",
   },
   {
-    Header: "QUANTITY",
-    accessor: "quantity",
+    Header: "NFTs",
+    accessor: "NFTs",
   },
   {
     Header: "DATE",
@@ -46,8 +46,8 @@ export const columnsDataColumns = [
     accessor: "Crypto",
   },
   {
-    Header: "QUANTITY",
-    accessor: "quantity",
+    Header: "NFTs",
+    accessor: "NFTs",
   },
   {
     Header: "DATE",

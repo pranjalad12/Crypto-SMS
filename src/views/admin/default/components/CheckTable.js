@@ -79,8 +79,8 @@ export default function CheckTable(props) {
         </Text>
       ),
     }),
-    columnHelper.accessor('quantity', {
-      id: 'quantity',
+    columnHelper.accessor('NFTs', {
+      id: 'NFTs',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -88,7 +88,7 @@ export default function CheckTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          QUANTITY
+          NFTs
         </Text>
       ),
       cell: (info) => (
