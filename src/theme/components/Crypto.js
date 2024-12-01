@@ -1,7 +1,7 @@
 import { mode } from "@chakra-ui/theme-tools";
-export const progressStyles = {
+export const CryptoStyles = {
   components: {
-    Progress: {
+    Crypto: {
       baseStyle: {
         field: {
           fontWeight: 400,

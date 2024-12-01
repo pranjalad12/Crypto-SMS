@@ -87,7 +87,7 @@ export default function TopCreatorTable(props) {
       ),
       cell: (info) => (
         <Flex align="center">
-          <Progress
+          <Crypto
             variant="table"
             colorScheme="brandScheme"
             h="8px"

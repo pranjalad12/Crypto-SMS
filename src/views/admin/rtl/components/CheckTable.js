@@ -62,8 +62,8 @@ export default function CheckTable(props) {
     //     </Flex>
     //   ),
     // }),
-    columnHelper.accessor('progress', {
-      id: 'progress',
+    columnHelper.accessor('Crypto', {
+      id: 'Crypto',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -71,7 +71,7 @@ export default function CheckTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          PROGRESS
+          Crypto
         </Text>
       ),
       cell: (info) => (

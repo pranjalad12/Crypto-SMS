@@ -121,8 +121,8 @@ export default function ComplexTable(props) {
         </Text>
       ),
     }),
-    columnHelper.accessor('progress', {
-      id: 'progress',
+    columnHelper.accessor('Crypto', {
+      id: 'Crypto',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -130,7 +130,7 @@ export default function ComplexTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          PROGRESS
+          Crypto
         </Text>
       ),
       cell: (info) => (
@@ -138,7 +138,7 @@ export default function ComplexTable(props) {
           <Text me="10px" color={textColor} fontSize="sm" fontWeight="700">
             {info.getValue()}%
           </Text>
-          <Progress
+          <Crypto
             variant="table"
             colorScheme="brandScheme"
             h="8px"
