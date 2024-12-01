@@ -35,7 +35,7 @@ export default function AdminNavbar(props) {
   let navbarShadow = "none";
   let navbarBg = useColorModeValue(
     "rgba(244, 247, 254, 0.2)",
-    "rgba(11,20,55,0.5)"
+    
   );
   let navbarBorder = "transparent";
   let secondaryMargin = "0px";
@@ -120,7 +120,7 @@ export default function AdminNavbar(props) {
             bg='inherit'
             borderRadius='inherit'
             fontWeight='bold'
-            fontSize='34px'
+            fontSize='39px'
             _hover={{ color: { mainText } }}
             _active={{
               bg: "inherit",

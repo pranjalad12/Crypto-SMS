@@ -50,10 +50,12 @@ export const globalStyles = {
       500: "#EE5D50",
       600: "#E31A1A",
     },
+    
     blue: {
-      50: "#EFF4FB",
-      500: "#3965FF",
+        50: "#EFF4FB",
+        500: "#3965FF",
     },
+    
     orange: {
       100: "#FFF6DA",
       500: "#FFB547",
@@ -63,16 +65,16 @@ export const globalStyles = {
       500: "#01B574",
     },
     navy: {
-      50: "#d0dcfb",
-      100: "#aac0fe",
-      200: "#a3b9f8",
-      300: "#728fea",
-      400: "#3652ba",
-      500: "#1b3bbb",
-      600: "#24388a",
-      700: "#1B254B",
-      800: "#111c44",
-      900: "#0b1437",
+      50: "#f2f2f2",  // Very light gray
+      100: "#d9d9d9", // Light gray
+      200: "#bfbfbf", // Medium-light gray
+      300: "#a6a6a6", // Medium gray
+      400: "#808080", // Neutral gray
+      500: "#595959", // Darker gray
+      600: "#404040", // Dark gray
+      700: "#262626", // Very dark gray
+      800: "#1a1a1a", // Almost black
+      900: "#0d0d0d", // Deep black
     },
     gray: {
       100: "#FAFCFE",

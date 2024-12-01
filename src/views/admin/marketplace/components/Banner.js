@@ -17,7 +17,7 @@ export default function Banner() {
       px={{ base: "30px", md: "64px" }}
       borderRadius='30px'>
       <Text
-        fontSize={{ base: "24px", md: "34px" }}
+        fontSize={{ base: "24px", md: "39px" }}
         color='white'
         mb='14px'
         maxW={{

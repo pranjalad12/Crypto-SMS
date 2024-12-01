@@ -276,7 +276,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenDashboards}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             cursor='default'
             borderRadius='15px'
             position='absolute'
@@ -314,7 +314,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenAuth}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             cursor='default'
             borderRadius='15px'
             position='absolute'
@@ -380,7 +380,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenMain}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             cursor='default'
             borderRadius='15px'
             position='absolute'
@@ -418,7 +418,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenNft}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             minW='350px'
             cursor='default'
             borderRadius='15px'
@@ -445,7 +445,7 @@ export default function AuthNavbar(props) {
         boxShadow={navbarShadow}
         borderRadius='15px'
         px='16px'
-        py='22px'
+        py='28px'
         mx='auto'
         width='1044px'
         maxW='90%'

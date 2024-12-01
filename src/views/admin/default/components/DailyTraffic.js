@@ -35,7 +35,7 @@ export default function DailyTraffic(props) {
           <Flex align='end'>
             <Text
               color={textColor}
-              fontSize='34px'
+              fontSize='39px'
               fontWeight='700'
               lineHeight='100%'>
               2.579

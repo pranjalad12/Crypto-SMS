@@ -365,7 +365,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenPages}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             minW='550px'
             cursor='default'
             borderRadius='15px'
@@ -399,7 +399,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenAuth}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             minW='450px'
             cursor='default'
             borderRadius='15px'
@@ -464,7 +464,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenApplication}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             cursor='default'
             borderRadius='15px'
             position='absolute'
@@ -499,7 +499,7 @@ export default function AuthNavbar(props) {
         <Menu isOpen={isOpenEcommerce}>
           <MenuList
             bg={menuBg}
-            p='22px'
+            p='28px'
             minW='350px'
             cursor='default'
             borderRadius='15px'
@@ -526,7 +526,7 @@ export default function AuthNavbar(props) {
         boxShadow={navbarShadow}
         borderRadius='15px'
         px='16px'
-        py='22px'
+        py='28px'
         mx='auto'
         width='1044px'
         maxW='90%'

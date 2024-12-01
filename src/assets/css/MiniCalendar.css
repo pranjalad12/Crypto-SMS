@@ -26,16 +26,16 @@ abbr[title] {
 .react-calendar__navigation__prev-button {
   background-color: #4318ff !important;
   border-radius: 10px;
-  min-width: 34px !important;
-  height: 34px !important;
+  min-width: 39px !important;
+  height: 39px !important;
   color: white;
 }
 .react-calendar__navigation__next-button {
   background-color: #4318ff !important;
   border-radius: 10px;
-  min-width: 34px !important;
-  width: 34px !important;
-  height: 34px !important;
+  min-width: 39px !important;
+  width: 39px !important;
+  height: 39px !important;
   color: white;
 }
 .react-calendar__navigation__label {
@@ -53,7 +53,7 @@ abbr[title] {
   align-items: center;
   justify-content: center;
   padding: 0px !important;
-  height: 34px !important;
+  height: 39px !important;
   color: #1b2559;
 }
 .react-calendar__month-view__weekdays {

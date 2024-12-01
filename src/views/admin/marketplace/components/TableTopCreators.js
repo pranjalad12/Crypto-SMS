@@ -120,7 +120,7 @@ export default function TopCreatorTable(props) {
         align={{ sm: 'flex-start', lg: 'center' }}
         justify="space-between"
         w="100%"
-        px="22px"
+        px="28px"
         pb="20px"
         mb="10px"
         boxShadow="0px 40px 58px -20px rgba(112, 144, 176, 0.26)"

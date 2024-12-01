@@ -116,7 +116,7 @@ export default function HeaderLinks(props) {
           borderRadius="20px"
           bg={menuBg}
           border="none"
-          mt="22px"
+          mt="28px"
           me={{ base: '30px', md: 'unset' }}
           minW={{ base: 'unset', md: '400px', xl: '450px' }}
           maxW={{ base: '360px', md: 'unset' }}
@@ -143,7 +143,7 @@ export default function HeaderLinks(props) {
               borderRadius="8px"
               mb="10px"
             >
-              <ItemContent info="Horizon UI Dashboard PRO" />
+              <ItemContent info="Crytpo - SMS Dashboard PRO" />
             </MenuItem>
             <MenuItem
               _hover={{ bg: 'none' }}
@@ -176,7 +176,7 @@ export default function HeaderLinks(props) {
           borderRadius="20px"
           bg={menuBg}
           border="none"
-          mt="22px"
+          mt="28px"
           minW={{ base: 'unset' }}
           maxW={{ base: '360px', md: 'unset' }}
         >
@@ -184,7 +184,7 @@ export default function HeaderLinks(props) {
           <Flex flexDirection="column">
             <Link w="100%" href="https://horizon-ui.com/pro">
               <Button w="100%" h="44px" mb="10px" variant="brand">
-                Buy Horizon UI PRO
+                Buy Crytpo - SMS PRO
               </Button>
             </Link>
             <Link
@@ -213,7 +213,7 @@ export default function HeaderLinks(props) {
                 color={textColor}
                 bg="transparent"
               >
-                Try Horizon Free
+                Try Crytpo - SMS
               </Button>
             </Link>
           </Flex>

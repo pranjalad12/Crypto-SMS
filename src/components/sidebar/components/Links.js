@@ -57,7 +57,7 @@ export function SidebarLinks(props) {
               <Box>
                 <HStack
                   spacing={
-                    activeRoute(route.path.toLowerCase()) ? "22px" : "26px"
+                    activeRoute(route.path.toLowerCase()) ? "28px" : "26px"
                   }
                   py='5px'
                   ps='10px'>
@@ -102,7 +102,7 @@ export function SidebarLinks(props) {
               <Box>
                 <HStack
                   spacing={
-                    activeRoute(route.path.toLowerCase()) ? "22px" : "26px"
+                    activeRoute(route.path.toLowerCase()) ? "28px" : "26px"
                   }
                   py='5px'
                   ps='10px'>

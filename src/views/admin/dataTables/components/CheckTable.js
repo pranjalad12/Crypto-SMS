@@ -139,12 +139,12 @@ export default function CheckTable(props) {
       <Flex px="25px" mb="8px" justifyContent="space-between" align="center">
         <Text
           color={textColor}
-          fontSize="22px"
+          fontSize="28px"
           mb="4px"
           fontWeight="700"
           lineHeight="100%"
         >
-          Check Table
+          Dashboard
         </Text>
         <Menu />
       </Flex>

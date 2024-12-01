@@ -39,7 +39,7 @@ export default function Banner(props) {
             </Text>
           </Box>
           <Flex mt='14px'>
-            <Flex direction='column' me='34px'>
+            <Flex direction='column' me='39px'>
               <Text fontSize='xs'>VALID THRU</Text>
               <Text fontSize='sm' fontWeight='500'>
                 {exp}

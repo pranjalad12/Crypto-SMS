@@ -6,11 +6,11 @@
  |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
                                                                                                                                                                                                                                                                                                                                        
 =========================================================
-* Horizon UI - v1.1.0
+* Crytpo - SMS - v1.1.0
 =========================================================
 
 * Product Page: https://www.horizon-ui.com/
-* Copyright 2023 Horizon UI (https://www.horizon-ui.com/)
+* Copyright 2023 Crytpo - SMS (https://www.horizon-ui.com/)
 
 * Designed and Coded by Simmmple
 
@@ -89,21 +89,21 @@ export default function Marketplace() {
                 <Link
                   color={textColorBrand}
                   fontWeight='500'
-                  me={{ base: "34px", md: "44px" }}
+                  me={{ base: "39px", md: "44px" }}
                   to='#art'>
                   Art
                 </Link>
                 <Link
                   color={textColorBrand}
                   fontWeight='500'
-                  me={{ base: "34px", md: "44px" }}
+                  me={{ base: "39px", md: "44px" }}
                   to='#music'>
                   Music
                 </Link>
                 <Link
                   color={textColorBrand}
                   fontWeight='500'
-                  me={{ base: "34px", md: "44px" }}
+                  me={{ base: "39px", md: "44px" }}
                   to='#collectibles'>
                   Collectibles
                 </Link>
@@ -246,7 +246,7 @@ export default function Marketplace() {
               align={{ sm: "flex-start", lg: "center" }}
               justify='space-between'
               w='100%'
-              px='22px'
+              px='28px'
               py='18px'>
               <Text color={textColor} fontSize='xl' fontWeight='600'>
                 History
