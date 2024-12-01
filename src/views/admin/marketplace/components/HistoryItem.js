@@ -7,14 +7,14 @@ import Card from "components/card/Card.js";
 import { FaEthereum } from "react-icons/fa";
 
 export default function NFT(props) {
-  const { image, name, author, date, price } = props;
+  const { image, name, author, DeFi, price } = props;
   // Chakra Color Mode
   const textColor = useColorModeValue("brands.900", "white");
   const bgItem = useColorModeValue(
     { bg: "white", boxShadow: "0px 40px 58px -20px rgba(112, 144, 176, 0.12)" },
     { bg: "navy.700", boxShadow: "unset" }
   );
-  const textColorDate = useColorModeValue("secondaryGray.600", "white");
+  const textColorDeFi = useColorModeValue("secondaryGray.600", "white");
   return (
     <Card
       _hover={bgItem}
@@ -58,8 +58,8 @@ export default function NFT(props) {
               {price}
             </Text>
           </Flex>
-          <Text ms='auto' fontWeight='700' fontSize='sm' color={textColorDate}>
-            {date}
+          <Text ms='auto' fontWeight='700' fontSize='sm' color={textColorDeFi}>
+            {DeFi}
           </Text>
         </Flex>
       </Flex>

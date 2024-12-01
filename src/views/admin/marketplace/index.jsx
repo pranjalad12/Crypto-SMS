@@ -257,42 +257,42 @@ export default function Marketplace() {
             <HistoryItem
               name='Colorful Heaven'
               author='By Mark Benjamin'
-              date='30s ago'
+              DeFi='30s ago'
               image={Nft5}
               price='0.91 ETH'
             />
             <HistoryItem
               name='Abstract Colors'
               author='By Esthera Jackson'
-              date='58s ago'
+              DeFi='58s ago'
               image={Nft1}
               price='0.91 ETH'
             />
             <HistoryItem
               name='ETH AI Brain'
               author='By Nick Wilson'
-              date='1m ago'
+              DeFi='1m ago'
               image={Nft2}
               price='0.91 ETH'
             />
             <HistoryItem
               name='Swipe Circles'
               author='By Peter Will'
-              date='1m ago'
+              DeFi='1m ago'
               image={Nft4}
               price='0.91 ETH'
             />
             <HistoryItem
               name='Mesh Gradients '
               author='By Will Smith'
-              date='2m ago'
+              DeFi='2m ago'
               image={Nft3}
               price='0.91 ETH'
             />
             <HistoryItem
               name='3D Cubes Art'
               author='By Manny Gates'
-              date='3m ago'
+              DeFi='3m ago'
               image={Nft6}
               price='0.91 ETH'
             />

@@ -28,7 +28,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="1"
-        label="Item update notifications"
+        label="Item upDeFi notifications"
       />
       <SwitchField
         reversed={true}

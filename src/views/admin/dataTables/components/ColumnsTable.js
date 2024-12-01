@@ -92,8 +92,8 @@ export default function ColumnTable(props) {
         </Text>
       ),
     }),
-    columnHelper.accessor('date', {
-      id: 'date',
+    columnHelper.accessor('DeFi', {
+      id: 'DeFi',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -101,7 +101,7 @@ export default function ColumnTable(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          DATE
+          DeFi
         </Text>
       ),
       cell: (info) => (

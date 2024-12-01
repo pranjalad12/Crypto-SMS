@@ -12,8 +12,8 @@ export const columnsDataCheck = [
     accessor: "NFTs",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
 ];
 export const columnsDataComplex = [
@@ -26,8 +26,8 @@ export const columnsDataComplex = [
     accessor: "status",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
   {
     Header: "Crypto",

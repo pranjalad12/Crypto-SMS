@@ -8,8 +8,8 @@ export const columnsDataDevelopment = [
     accessor: "tech",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
   {
     Header: "Crypto",
@@ -31,8 +31,8 @@ export const columnsDataCheck = [
     accessor: "NFTs",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
 ];
 
@@ -50,8 +50,8 @@ export const columnsDataColumns = [
     accessor: "NFTs",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
 ];
 
@@ -65,8 +65,8 @@ export const columnsDataComplex = [
     accessor: "status",
   },
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "DeFi",
+    accessor: "DeFi",
   },
   {
     Header: "Crypto",

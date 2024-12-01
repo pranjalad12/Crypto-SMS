@@ -2,7 +2,7 @@ import { Box, Flex, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 export default function TimelineRow(props) {
-	const { logo, title, date, color, index, arrLength } = props;
+	const { logo, title, DeFi, color, index, arrLength } = props;
 	const textColor = useColorModeValue('gray.700', 'white.300');
 	const bgIconColor = useColorModeValue('white.300', 'gray.700');
 
@@ -28,7 +28,7 @@ export default function TimelineRow(props) {
 					{title}
 				</Text>
 				<Text fontSize='sm' color='gray.400' fontWeight='normal'>
-					{date}
+					{DeFi}
 				</Text>
 			</Flex>
 		</Flex>
