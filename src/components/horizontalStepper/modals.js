@@ -4,8 +4,8 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree"; // Import StepThree
 import Final from "./Final";
-import StepFour from "./StepFour"; // Import StepFour
-
+import StepFive from "./StepFive"; // Import StepFive
+import StepFour from "./StepFour";
 function ModalS() {
   const [step, setStep] = useState(1);
 
@@ -15,6 +15,7 @@ function ModalS() {
     passkey: "",
     amount: "",
   });
+  const [qrCodeUrl, setUrl]=useState("https://img.freepik.com/premium-vector/vector-qr-code-sample-smartphone-scanning-isolated-white-background_255502-625.jpg")
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -84,14 +85,42 @@ function ModalS() {
           </Container>
         </div>
       );
-
+  case 4:
+    return (
+    <div className="App">
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }} className="custom-margin">
+            <StepFour nextStep={nextStep} />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+  case 5:
+  return (
+    <div className="App">
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }} className="custom-margin">
+            <StepFive
+              prevStep={prevStep}
+              handleFormData={handleInputData}
+              values={formData}
+              nextStep={nextStep}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
     default:
       return (
         <div className="App">
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Final values={formData} />
+                <Final values={formData} qrCodeUrl={qrCodeUrl}/>
               </Col>
             </Row>
           </Container>

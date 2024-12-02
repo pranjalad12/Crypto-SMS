@@ -1,74 +1,49 @@
-import React, { useState } from "react";
-import { Form, Card } from "react-bootstrap";
-import { Button } from "@chakra-ui/react";
-
-const StepFour = ({ prevStep, handleFormData, values }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedAccount, setSelectedAccount] = useState("");
-  const [selectedCryptocurrency, setSelectedCryptocurrency] = useState("");
-
-  const handleSave = () => {
-    handleFormData("language", selectedLanguage);
-    handleFormData("account", selectedAccount);
-    handleFormData("cryptocurrency", selectedCryptocurrency);
-    alert("Preferences Saved");
+import React from "react";
+import { Card} from "react-bootstrap";
+import {
+    Avatar,
+    Button,
+    Flex,
+    Icon,
+    Image,
+    Link,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    Text,
+    useColorModeValue,
+    useColorMode,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    useDisclosure,
+  } from '@chakra-ui/react';
+const StepFour = ({ nextStep }) => {
+  const handleGenerateQRCode = () => {
+    // Logic for generating QR Code can go here
+    nextStep();
   };
 
   return (
     <>
       <Card>
         <Card.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Language of Transaction</Form.Label>
-              <Form.Control
-                as="select"
-                value={selectedLanguage}
-                onChange={(e) => setSelectedLanguage(e.target.value)}
-              >
-                <option value="">Select Language</option>
-                <option value="English">English</option>
-                <option value="Spanish">Spanish</option>
-                <option value="French">French</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Select Account</Form.Label>
-              <Form.Control
-                as="select"
-                value={selectedAccount}
-                onChange={(e) => setSelectedAccount(e.target.value)}
-              >
-                <option value="">Select Account</option>
-                <option value="Account1">Account 1</option>
-                <option value="Account2">Account 2</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Select Cryptocurrency</Form.Label>
-              <Form.Control
-                as="select"
-                value={selectedCryptocurrency}
-                onChange={(e) => setSelectedCryptocurrency(e.target.value)}
-              >
-                <option value="">Select Cryptocurrency</option>
-                <option value="Bitcoin">Bitcoin</option>
-                <option value="Ethereum">Ethereum</option>
-                <option value="Litecoin">Litecoin</option>
-              </Form.Control>
-            </Form.Group>
-            <br />
-            <div>
-              <Button colorScheme="blue" onClick={prevStep}>
-                Previous
-              </Button>
-              <Button colorScheme="green" onClick={handleSave} style={{ marginLeft: "10px" }}>
-                Save
-              </Button>
-            </div>
-          </Form>
+          <div style={{ textAlign: "center" }}>
+            <h3>Your account has been created successfully!</h3>
+            <p>You can now proceed to generate your QR code.</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+            <Button
+              colorScheme="blue"
+              onClick={handleGenerateQRCode}
+            >
+              Generate QR Code
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </>
