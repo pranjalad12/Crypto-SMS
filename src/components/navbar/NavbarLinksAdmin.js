@@ -66,7 +66,7 @@ export default function HeaderLinks(props) {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      <SearchBar
+      {/* <SearchBar
         mb={() => {
           if (secondary) {
             return { base: '10px', md: 'unset' };
@@ -75,7 +75,7 @@ export default function HeaderLinks(props) {
         }}
         me="10px"
         borderRadius="30px"
-      />
+      /> */}
       
       {/* Button to Open Modal */}
       <Button  colorScheme="twitter" onClick={onOpen} mr="10px">
@@ -95,12 +95,12 @@ export default function HeaderLinks(props) {
           <ModalBody>
             <ModalS/>
           </ModalBody>
-          <ModalFooter>
+          {/* <ModalFooter>
             <Button variant="ghost" mr={3} onClick={onClose}>
               Close
             </Button>
             {/* <Button colorScheme="blue">Generate QR Code</Button> */}
-          </ModalFooter>
+          {/* </ModalFooter> */} 
         </ModalContent>
       </Modal>
       
@@ -199,7 +199,7 @@ export default function HeaderLinks(props) {
             h="40px"
           />
         </MenuButton>
-        <MenuList
+        {/* <MenuList
           boxShadow={shadow}
           p="0px"
           mt="10px"
@@ -249,7 +249,7 @@ export default function HeaderLinks(props) {
               <Text fontSize="sm">Log out</Text>
             </MenuItem>
           </Flex>
-        </MenuList>
+        </MenuList> */}
       </Menu>
     </Flex>
   );

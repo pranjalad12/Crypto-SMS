@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import validator from "validator";
-import { Input, Button } from "@chakra-ui/react";
+import { Input, Button, Flex } from "@chakra-ui/react";
 
 const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
-  // Creating error state for validation
   const [error, setError] = useState(false);
 
-  // After form submit, validate the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
-    // Check if the value of age is empty; show error otherwise proceed to the next step
     if (validator.isEmpty(values.age)) {
       setError(true);
     } else {
-      setError(false); // Reset the error state
-      nextStep(); // Move to the next step
+      setError(false);
+      nextStep();
     }
   };
 
@@ -33,10 +30,10 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
                 placeholder="Enter your OTP"
                 value={values.age || ""}
                 onChange={(e) => handleFormData("age", e.target.value)}
-                isInvalid={error} // Chakra UI's invalid styling
+                isInvalid={error}
                 errorBorderColor="red.500"
-                color="white" // Text color set to white
-                bg="transparent" // Set background color to transparent
+                color="white"
+                bg="transparent"
               />
               {error && (
                 <div style={{ color: "red", marginTop: "5px" }}>
@@ -45,15 +42,15 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
               )}
             </Form.Group>
 
-            <div style={{ marginTop: "20px" }}>
-              <Button colorScheme="blue" onClick={prevStep} mr={3}>
+            <Flex mt={5} justify="space-between">
+              <Button colorScheme="blue" onClick={prevStep} w="15%">
                 Previous
               </Button>
-
-              <Button colorScheme="blue" type="submit">
+              <Button colorScheme="blue" type="submit" w="15%">
                 Next
               </Button>
-            </div>
+            </Flex>
+            <br/>
           </Form>
         </Card.Body>
       </Card>

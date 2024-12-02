@@ -86,9 +86,10 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
                 </FormErrorMessage>
               )}
             </FormControl>
-            <Button colorScheme="blue" type="submit">
-              Continue
-            </Button>
+            <Button colorScheme="blue" type="submit" width="100%">
+  Continue
+</Button>
+
           </form>
         </CardBody>
       </Card>

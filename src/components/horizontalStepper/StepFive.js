@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { Button, Select, FormControl, FormLabel } from "@chakra-ui/react";
+import { Button, Select, FormControl, FormLabel, Flex } from "@chakra-ui/react";
 
 const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
   const languages = ["English", "Spanish", "French"];
@@ -22,15 +22,15 @@ const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
                 placeholder="Select Language"
                 value={values.language || ""}
                 onChange={(e) => handleFormData("language", e.target.value)}
-                bg="black" // Black background for the Select
-                color="white" // White text color for better contrast
+                bg="black"
+                color="white"
                 borderColor="gray.400"
-                _focus={{ bg: "black", borderColor: "blue.500" }} // Black on focus
-                _hover={{ bg: "black" }} // Black on hover
+                _focus={{ bg: "black", borderColor: "blue.500" }}
+                _hover={{ bg: "black" }}
                 sx={{
                   option: {
-                    backgroundColor: "black", // Black background for options
-                    color: "white", // White text for options
+                    backgroundColor: "black",
+                    color: "white",
                   },
                 }}
               >
@@ -94,15 +94,16 @@ const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
               </Select>
             </FormControl>
 
-            <div>
+            <Flex justifyContent="space-between" mt="4">
               <Button colorScheme="blue" onClick={prevStep}>
                 Previous
               </Button>
-              <Button colorScheme="green" onClick={handleSave} ml="4">
+              <Button colorScheme="green" onClick={handleSave}>
                 Generate
               </Button>
-            </div>
+            </Flex>
           </form>
+          <br/>
         </Card.Body>
       </Card>
     </>
