@@ -1,89 +1,96 @@
 import React, { useState } from "react";
-import { Form, Card} from "react-bootstrap";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-
 import {
-  Avatar,
   Button,
-  Flex,
-  Icon,
-  Image,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-  useColorModeValue,
-  useColorMode,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from '@chakra-ui/react';
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  FormErrorMessage,
+  Card,
+  CardBody,
+  HStack,
+} from "@chakra-ui/react";
+
 const StepOne = ({ nextStep, handleFormData, values }) => {
   const [error, setError] = useState(false);
 
   const submitFormData = (e) => {
     e.preventDefault();
     console.log("Phone Number in Submit:", values.phoneNumber);
-    console.log(error);
-    if (!values.phoneNumber) {
+    console.log("Country Code in Submit:", values.countryCode);
+    if (!values.phoneNumber || !values.countryCode) {
       setError(true);
     } else {
       setError(false);
       nextStep();
     }
   };
-  
+
   return (
     <div>
-            <style>
-        {`
-          .country-list {
-            background-color: black !important;
-            color: white !important;
-          }
-          .country-list .country {
-            color: white !important;
-          }
-          .country-list .country:hover {
-            background-color: #333 !important; /* Darker gray on hover */
-            color: white !important;
-          }
-          .country-list .country.highlight {
-            background-color: #444 !important; /* Dark background for selected option */
-            color: white !important;
-          }
-        `}
-      </style>
-      <Card>
-        <Card.Body>
-          <Form onSubmit={submitFormData}>
-            <Form.Group className="mb-3">
-              <Form.Label>Phone Number</Form.Label>
-              <PhoneInput
-                country={"us"}
-                value={values.phoneNumber}
-                onChange={(phone) => handleFormData("phoneNumber", phone)}
-                inputStyle={{
-                  border: error ? "2px solid red" : "",
-                }}
-              />
+      <Card bg="transparent" boxShadow="none">
+        <CardBody>
+          <form onSubmit={submitFormData}>
+            <FormControl isInvalid={error} mb={4}>
+              <FormLabel color="white">Phone Number</FormLabel>
+              <HStack>
+                <Select
+                  placeholder="Code"
+                  value={values.countryCode}
+                  onChange={(e) =>
+                    handleFormData("countryCode", e.target.value)
+                  }
+                  color="white"
+                  bg="transparent"
+                  border="1px solid white"
+                  _placeholder={{ color: "gray.400" }}
+                  _hover={{ bg: "transparent" }}
+                  _focus={{ bg: "transparent" }}
+                  width="20%"
+                >
+                  {[
+                    { code: "+1", label: "United States" },
+                    { code: "+91", label: "India" },
+                    { code: "+44", label: "United Kingdom" },
+                    { code: "+61", label: "Australia" },
+                    { code: "+81", label: "Japan" },
+                  ].map((country) => (
+                    <option
+                      key={country.code}
+                      value={country.code}
+                      style={{ backgroundColor: "black", color: "white" }}
+                    >
+                      {country.code} ({country.label})
+                    </option>
+                  ))}
+                </Select>
+                <Input
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={values.phoneNumber}
+                  onChange={(e) =>
+                    handleFormData("phoneNumber", e.target.value)
+                  }
+                  color="white"
+                  _placeholder={{ color: "gray.400" }}
+                  bg="transparent"
+                  border="1px solid white"
+                  _hover={{ bg: "transparent" }}
+                  _focus={{ bg: "transparent" }}
+                  width="80%"
+                />
+              </HStack>
               {error && (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field or invalid number
-                </Form.Text>
+                <FormErrorMessage color="white">
+                  Both fields are required or invalid
+                </FormErrorMessage>
               )}
-            </Form.Group>
-            <br/>
-            <Button colorScheme="blue" type="Submit">Continue</Button>
-          </Form>
-        </Card.Body>
+            </FormControl>
+            <Button colorScheme="blue" type="submit">
+              Continue
+            </Button>
+          </form>
+        </CardBody>
       </Card>
     </div>
   );

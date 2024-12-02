@@ -91,7 +91,7 @@ export default function HeaderLinks(props) {
           borderRadius="20px"
            bg="#1a1616 "
         >
-          <ModalHeader>Modal Title</ModalHeader>
+          {/* <ModalHeader>Modal Title</ModalHeader> */}
           <ModalBody>
             <ModalS/>
           </ModalBody>

@@ -1,9 +1,8 @@
 import React from "react";
-import { Form, Card } from "react-bootstrap";
-import { Button } from "@chakra-ui/react";
+import { Card } from "react-bootstrap";
+import { Button, Select, FormControl, FormLabel } from "@chakra-ui/react";
 
 const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
-  // Define the options as arrays
   const languages = ["English", "Spanish", "French"];
   const accounts = ["Account1", "Account2"];
   const cryptocurrencies = ["Bitcoin", "Ethereum", "Litecoin"];
@@ -16,69 +15,94 @@ const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
     <>
       <Card>
         <Card.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Language of Transaction</Form.Label>
-              <br/>
-              <Form.Control
-                as="select"
+          <form>
+            <FormControl mb="4">
+              <FormLabel>Language of Transaction</FormLabel>
+              <Select
+                placeholder="Select Language"
                 value={values.language || ""}
-                onChange={(e) => handleFormData("language", e)}
+                onChange={(e) => handleFormData("language", e.target.value)}
+                bg="black" // Black background for the Select
+                color="white" // White text color for better contrast
+                borderColor="gray.400"
+                _focus={{ bg: "black", borderColor: "blue.500" }} // Black on focus
+                _hover={{ bg: "black" }} // Black on hover
+                sx={{
+                  option: {
+                    backgroundColor: "black", // Black background for options
+                    color: "white", // White text for options
+                  },
+                }}
               >
-                <option value="">Select Language</option>
                 {languages.map((lang) => (
                   <option key={lang} value={lang}>
                     {lang}
                   </option>
                 ))}
-              </Form.Control>
-            </Form.Group>
-          
-            <br/>
-            <Form.Group className="mb-3">
-              <Form.Label>Select Account</Form.Label>
-              <br/>
-              <Form.Control
-                as="select"
+              </Select>
+            </FormControl>
+
+            <FormControl mb="4">
+              <FormLabel>Select Account</FormLabel>
+              <Select
+                placeholder="Select Account"
                 value={values.account || ""}
-                onChange={(e) => handleFormData("account", e)}
+                onChange={(e) => handleFormData("account", e.target.value)}
+                bg="black"
+                color="white"
+                borderColor="gray.400"
+                _focus={{ bg: "black", borderColor: "blue.500" }}
+                _hover={{ bg: "black" }}
+                sx={{
+                  option: {
+                    backgroundColor: "black",
+                    color: "white",
+                  },
+                }}
               >
-                <option value="">Select Account</option>
                 {accounts.map((account) => (
                   <option key={account} value={account}>
                     {account}
                   </option>
                 ))}
-              </Form.Control>
-            </Form.Group>
-            <br/>
-           
-            <Form.Group className="mb-3">
-              <Form.Label>Select Cryptocurrency</Form.Label>
-              <br/>
-              <Form.Control
-                as="select"
+              </Select>
+            </FormControl>
+
+            <FormControl mb="4">
+              <FormLabel>Select Cryptocurrency</FormLabel>
+              <Select
+                placeholder="Select Cryptocurrency"
                 value={values.cryptocurrency || ""}
-                onChange={(e) => handleFormData("cryptocurrency", e)}
+                onChange={(e) => handleFormData("cryptocurrency", e.target.value)}
+                bg="black"
+                color="white"
+                borderColor="gray.400"
+                _focus={{ bg: "black", borderColor: "blue.500" }}
+                _hover={{ bg: "black" }}
+                sx={{
+                  option: {
+                    backgroundColor: "black",
+                    color: "white",
+                  },
+                }}
               >
-                <option value="">Select Cryptocurrency</option>
                 {cryptocurrencies.map((crypto) => (
                   <option key={crypto} value={crypto}>
                     {crypto}
                   </option>
                 ))}
-              </Form.Control>
-            </Form.Group>
-            <br />
+              </Select>
+            </FormControl>
+
             <div>
               <Button colorScheme="blue" onClick={prevStep}>
                 Previous
               </Button>
-              <Button colorScheme="green" onClick={handleSave} style={{ marginLeft: "10px" }}>
-                Save
+              <Button colorScheme="green" onClick={handleSave} ml="4">
+                Generate
               </Button>
             </div>
-          </Form>
+          </form>
         </Card.Body>
       </Card>
     </>

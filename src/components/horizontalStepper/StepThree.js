@@ -1,30 +1,14 @@
 import React, { useState } from "react";
-import { Form, Card } from "react-bootstrap";
-
-
 import {
-    Avatar,
-    Button,
-    Flex,
-    Icon,
-    Image,
-    Link,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuList,
-    Text,
-    useColorModeValue,
-    useColorMode,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    useDisclosure,
-  } from '@chakra-ui/react';
-  
+  Box,
+  Button,
+  Input,
+  FormLabel,
+  FormControl,
+  FormHelperText,
+  Card,
+} from "@chakra-ui/react";
+
 const StepThree = ({ nextStep, prevStep, handleFormData, values }) => {
   const [error, setError] = useState({ passkey: false, amount: false });
 
@@ -45,57 +29,55 @@ const StepThree = ({ nextStep, prevStep, handleFormData, values }) => {
   };
 
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <Form onSubmit={submitFormData}>
-            <Form.Group className="mb-3">
-              <Form.Label>Passkey</Form.Label>
-              <br/>
-              <Form.Control
-                type="text"
-                placeholder="Enter your passkey"
-                value={values.passkey || ""}
-                style={{ border: error.passkey ? "2px solid red" : "" }}
-                onChange={(e) => handleFormData("passkey", e.target.value)}
-              />
-              {error.passkey && (
-                <Form.Text style={{ color: "red" }}>
-                  Passkey is required.
-                </Form.Text>
-              )}
-            </Form.Group>
+    <Card bg="transparent">
+      <Box as="form" p="4" onSubmit={submitFormData}>
+        {/* Passkey Input */}
+        <FormControl mb="4" isInvalid={error.passkey}>
+          <FormLabel color="white">Passkey</FormLabel>
+          <Input
+            type="text"
+            placeholder="Enter your passkey"
+            value={values.passkey || ""}
+            onChange={(e) => handleFormData("passkey", e.target.value)}
+            errorBorderColor="red.500"
+            color="white"
+          />
+          {error.passkey && (
+            <FormHelperText color="red.500">
+              Passkey is required.
+            </FormHelperText>
+          )}
+        </FormControl>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Amount</Form.Label>
-              <br/>
-              <Form.Control
-                type="number"
-                placeholder="Enter amount"
-                value={values.amount || ""}
-                style={{ border: error.amount ? "2px solid red" : "" }}
-                onChange={(e) => handleFormData("amount", e.target.value)}
-              />
-              {error.amount && (
-                <Form.Text style={{ color: "red" }}>
-                  Amount is required.
-                </Form.Text>
-              )}
-            </Form.Group>
-              <br/>
-            <div style={{ }}>
-              <Button colorScheme="blue" onClick={prevStep}>
-                Previous
-              </Button>
+        {/* Amount Input */}
+        <FormControl mb="4" isInvalid={error.amount}>
+          <FormLabel color="white">Amount</FormLabel>
+          <Input
+            type="number"
+            placeholder="Enter amount"
+            value={values.amount || ""}
+            onChange={(e) => handleFormData("amount", e.target.value)}
+            errorBorderColor="red.500"
+            color="white"
+          />
+          {error.amount && (
+            <FormHelperText color="red.500">
+              Amount is required.
+            </FormHelperText>
+          )}
+        </FormControl>
 
-              <Button colorScheme="blue" type="submit">
-                Submit
-              </Button>
-            </div>
-          </Form>
-        </Card.Body>
-      </Card>
-    </>
+        {/* Navigation Buttons */}
+        <Box display="flex" justifyContent="space-between" mt="4">
+          <Button colorScheme="blue" onClick={prevStep}>
+            Previous
+          </Button>
+          <Button colorScheme="blue" type="submit">
+            Submit
+          </Button>
+        </Box>
+      </Box>
+    </Card>
   );
 };
 

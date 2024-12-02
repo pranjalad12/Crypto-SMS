@@ -1,29 +1,7 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import validator from "validator";
-
-import {
-  Avatar,
-  Button,
-  Flex,
-  Icon,
-  Image,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-  useColorModeValue,
-  useColorMode,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Input, Button } from "@chakra-ui/react";
 
 const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
   // Creating error state for validation
@@ -32,7 +10,7 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
   // After form submit, validate the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
-    
+
     // Check if the value of age is empty; show error otherwise proceed to the next step
     if (validator.isEmpty(values.age)) {
       setError(true);
@@ -48,25 +26,27 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
         <Card.Body>
           <Form onSubmit={submitFormData}>
             <Form.Group className="mb-3">
-              <Form.Label>Enter the OTP sent to phone number</Form.Label>
+              <Form.Label>Enter the OTP: </Form.Label>
               <br />
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                type="number"
-                placeholder="Enter OTP"
+              <br />
+              <Input
+                placeholder="Enter your OTP"
                 value={values.age || ""}
                 onChange={(e) => handleFormData("age", e.target.value)}
+                isInvalid={error} // Chakra UI's invalid styling
+                errorBorderColor="red.500"
+                color="white" // Text color set to white
+                bg="transparent" // Set background color to transparent
               />
               {error && (
-                <Form.Text style={{ color: "red" }}>
+                <div style={{ color: "red", marginTop: "5px" }}>
                   This is a required field
-                </Form.Text>
+                </div>
               )}
             </Form.Group>
 
-            <div style={{  }}>
-              <br/>
-              <Button colorScheme="blue" onClick={prevStep}>
+            <div style={{ marginTop: "20px" }}>
+              <Button colorScheme="blue" onClick={prevStep} mr={3}>
                 Previous
               </Button>
 
@@ -82,4 +62,3 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
 };
 
 export default StepTwo;
-{/* <Button colorScheme="blue" type="Submit" onclick={prevStep}>Previous Step</Button> */}
