@@ -25,11 +25,10 @@ export default function Projects(props) {
         fontSize='2xl'
         mt='10px'
         mb='4px'>
-        All projects
+        All Crypto News
       </Text>
       <Text color={textColorSecondary} fontSize='md' me='26px' mb='40px'>
-        Here you can find more details about your projects. Keep you user
-        engaged by providing meaningful information.
+      Here you can find the latest updates and details about cryptocurrency. Keep your users engaged by providing meaningful and up-to-date information.
       </Text>
       <Project
         boxShadow={cardShadow}
@@ -37,7 +36,7 @@ export default function Projects(props) {
         image={Project1}
         ranking='1'
         link='#'
-        title='Technology behind the Blockchain'
+        title='Emerging Trends in Cryptocurrency'
       />
       <Project
         boxShadow={cardShadow}
@@ -45,14 +44,14 @@ export default function Projects(props) {
         image={Project2}
         ranking='2'
         link='#'
-        title='Greatest way to a good Economy'
+        title='How Blockchain is Revolutionizing Finance'
       />
       <Project
         boxShadow={cardShadow}
         image={Project3}
         ranking='3'
         link='#'
-        title='Most essential tips for Burnout'
+        title='Top Security Tips for Crypto Investors'
       />
     </Card>
   );

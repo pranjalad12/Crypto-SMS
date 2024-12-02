@@ -5,10 +5,11 @@ import Card from "components/card/Card.js";
 import SwitchField from "components/fields/SwitchField";
 import Menu from "components/menu/MainMenu";
 
-export default function Notifications(props) {
+export default function CryptoInfo(props) {
   const { ...rest } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
+
   return (
     <Card mb="20px" mt="40px" mx="auto" maxW="410px" {...rest}>
       <Flex align="center" w="100%" justify="space-between" mb="30px">
@@ -18,7 +19,7 @@ export default function Notifications(props) {
           fontSize="2xl"
           mb="4px"
         >
-          Notifications
+          Crypto Information
         </Text>
         <Menu />
       </Flex>
@@ -28,14 +29,14 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="1"
-        label="Item upDeFi notifications"
+        label="Receive price alerts"
       />
       <SwitchField
         reversed={true}
         fontSize="sm"
         mb="20px"
         id="2"
-        label="Item comment notifications"
+        label="Market news updates"
       />
       <SwitchField
         isChecked={true}
@@ -43,7 +44,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="3"
-        label="Buyer review notifications"
+        label="Transaction confirmations"
       />
       <SwitchField
         isChecked={true}
@@ -51,21 +52,21 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="4"
-        label="Rating reminders notifications"
+        label="Wallet security tips"
       />
       <SwitchField
         reversed={true}
         fontSize="sm"
         mb="20px"
         id="5"
-        label="Meetups near you notifications"
+        label="Educational articles"
       />
       <SwitchField
         reversed={true}
         fontSize="sm"
         mb="20px"
         id="6"
-        label="Company news notifications"
+        label="Upcoming events and webinars"
       />
       <SwitchField
         isChecked={true}
@@ -73,14 +74,14 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="7"
-        label="New launches and projects"
+        label="New cryptocurrency listings"
       />
       <SwitchField
         reversed={true}
         fontSize="sm"
         mb="20px"
         id="8"
-        label="Monthly product changes"
+        label="Weekly market analysis"
       />
       <SwitchField
         isChecked={true}
@@ -88,13 +89,13 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="9"
-        label="Subscribe to newsletter"
+        label="Subscribe to crypto insights"
       />
       <SwitchField
         reversed={true}
         fontSize="sm"
         id="10"
-        label="Email me when someone follows me"
+        label="Email me for trending tokens"
       />
     </Card>
   );

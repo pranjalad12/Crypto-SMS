@@ -19,49 +19,52 @@ export default function GeneralInformation(props) {
     <Card mb={{ base: "0px", "2xl": "20px" }} {...rest}>
       <Text
         color={textColorPrimary}
-        fontWeight='bold'
-        fontSize='2xl'
-        mt='10px'
-        mb='4px'>
-        General Information
+        fontWeight="bold"
+        fontSize="2xl"
+        mt="10px"
+        mb="4px"
+      >
+        Latest Trends
       </Text>
-      <Text color={textColorSecondary} fontSize='md' me='26px' mb='40px'>
-        As we live, our hearts turn colder. Cause pain is what we go through as
-        we become older. We get insulted by others, lose trust for those others.
-        We get back stabbed by friends. It becomes harder for us to give others
-        a hand. We get our heart broken by people we love, even that we give
-        them all...
+      <Text color={textColorSecondary} fontSize="md" me="26px" mb="40px">
+        The global cryptocurrency market cap is now over $1 trillion, driven by
+        rapid adoption and institutional investments. Bitcoin, the largest
+        cryptocurrency, has a market cap exceeding $500 billion. Ethereum,
+        known for its smart contracts, is driving innovation in decentralized
+        finance (DeFi) and NFTs. Blockchain technology is being adopted by
+        industries like healthcare, finance, and supply chain to improve
+        transparency and efficiency.
       </Text>
-      <SimpleGrid columns='2' gap='20px'>
+      <SimpleGrid columns="2" gap="20px">
         <Information
           boxShadow={cardShadow}
-          title='Education'
-          value='Stanford University'
+          title="Bitcoin's Market Cap"
+          value="$500+ Billion"
         />
         <Information
           boxShadow={cardShadow}
-          title='Languages'
-          value='English, Spanish, Italian'
+          title="Ethereum's Role"
+          value="Smart Contracts & DeFi"
         />
         <Information
           boxShadow={cardShadow}
-          title='Department'
-          value='Product Design'
+          title="Top Use Case"
+          value="Decentralized Finance (DeFi)"
         />
         <Information
           boxShadow={cardShadow}
-          title='Work History'
-          value='Google, Facebook'
+          title="Global Adoption"
+          value="Increasing Rapidly"
         />
         <Information
           boxShadow={cardShadow}
-          title='Organization'
-          value='Simmmple Web LLC'
+          title="NFT Market"
+          value="Revolutionizing Digital Art"
         />
         <Information
           boxShadow={cardShadow}
-          title='Birthday'
-          value='20 July 1986'
+          title="Blockchain Usage"
+          value="Healthcare, Finance, Supply Chain"
         />
       </SimpleGrid>
     </Card>
