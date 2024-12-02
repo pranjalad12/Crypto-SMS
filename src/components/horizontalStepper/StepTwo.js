@@ -1,67 +1,77 @@
 import React, { useState } from "react";
-import { Form, Card, Button } from "react-bootstrap";
+import { Form, Card } from "react-bootstrap";
 import validator from "validator";
 
-// creating functional component ans getting props from app.js and destucturing them
+import {
+  Avatar,
+  Button,
+  Flex,
+  Icon,
+  Image,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorModeValue,
+  useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from '@chakra-ui/react';
+
 const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
-   //creating error state for validation
+  // Creating error state for validation
   const [error, setError] = useState(false);
 
-    // after form submit validating the form data using validator
+  // After form submit, validate the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
-
-     // checking if value of first name and last name is empty show error else take to next step
-    if (validator.isEmpty(values.age) || validator.isEmpty(values.email)) {
+    
+    // Check if the value of age is empty; show error otherwise proceed to the next step
+    if (validator.isEmpty(values.age)) {
       setError(true);
     } else {
-      nextStep();
+      setError(false); // Reset the error state
+      nextStep(); // Move to the next step
     }
   };
+
   return (
     <>
-      <Card style={{ marginTop: 100 }}>
+      <Card>
         <Card.Body>
           <Form onSubmit={submitFormData}>
             <Form.Group className="mb-3">
-              <Form.Label>Age</Form.Label>
+              <Form.Label>Enter the OTP sent to phone number</Form.Label>
+              <br />
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 type="number"
-                placeholder="Age"
-                onChange={handleFormData("age")}
+                placeholder="Enter OTP"
+                value={values.age || ""}
+                onChange={(e) => handleFormData("age", e.target.value)}
               />
-              {error ? (
+              {error && (
                 <Form.Text style={{ color: "red" }}>
                   This is a required field
                 </Form.Text>
-              ) : (
-                ""
               )}
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                type="email"
-                placeholder="email"
-                onChange={handleFormData("email")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button variant="primary" onClick={prevStep}>
+
+            <div style={{  }}>
+              <br/>
+              <Button colorScheme="blue" onClick={prevStep}>
                 Previous
               </Button>
 
-              <Button variant="primary" type="submit">
-                Submit
+              <Button colorScheme="blue" type="submit">
+                Next
               </Button>
             </div>
           </Form>
@@ -72,3 +82,4 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
 };
 
 export default StepTwo;
+{/* <Button colorScheme="blue" type="Submit" onclick={prevStep}>Previous Step</Button> */}

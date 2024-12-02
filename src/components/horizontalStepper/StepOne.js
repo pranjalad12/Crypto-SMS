@@ -1,71 +1,87 @@
 import React, { useState } from "react";
-import { Form, Card, Button } from "react-bootstrap";
-import validator from "validator";
+import { Form, Card} from "react-bootstrap";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
-// creating functional component ans getting props from app.js and destucturing them
+import {
+  Avatar,
+  Button,
+  Flex,
+  Icon,
+  Image,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorModeValue,
+  useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from '@chakra-ui/react';
 const StepOne = ({ nextStep, handleFormData, values }) => {
-  //creating error state for validation
   const [error, setError] = useState(false);
 
-  // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
-
-    // checking if value of first name and last name is empty show error else take to step 2
-    if (
-      validator.isEmpty(values.firstName) ||
-      validator.isEmpty(values.lastName)
-    ) {
+    console.log("Phone Number in Submit:", values.phoneNumber);
+    console.log(error);
+    if (!values.phoneNumber) {
       setError(true);
     } else {
+      setError(false);
       nextStep();
     }
   };
-
+  
   return (
     <div>
-      <Card style={{ marginTop: 100 }}>
+            <style>
+        {`
+          .country-list {
+            background-color: black !important;
+            color: white !important;
+          }
+          .country-list .country {
+            color: white !important;
+          }
+          .country-list .country:hover {
+            background-color: #333 !important; /* Darker gray on hover */
+            color: white !important;
+          }
+          .country-list .country.highlight {
+            background-color: #444 !important; /* Dark background for selected option */
+            color: white !important;
+          }
+        `}
+      </style>
+      <Card>
         <Card.Body>
           <Form onSubmit={submitFormData}>
             <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                name="firstName"
-                defaultValue={values.firstName}
-                type="text"
-                placeholder="First Name"
-                onChange={handleFormData("firstName")}
+              <Form.Label>Phone Number</Form.Label>
+              <PhoneInput
+                country={"us"}
+                value={values.phoneNumber}
+                onChange={(phone) => handleFormData("phoneNumber", phone)}
+                inputStyle={{
+                  border: error ? "2px solid red" : "",
+                }}
               />
-              {error ? (
+              {error && (
                 <Form.Text style={{ color: "red" }}>
-                  This is a required field
+                  This is a required field or invalid number
                 </Form.Text>
-              ) : (
-                ""
               )}
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                name="lastName"
-                defaultValue={values.lastName}
-                type="text"
-                placeholder="Last Name"
-                onChange={handleFormData("lastName")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Continue
-            </Button>
+            <br/>
+            <Button colorScheme="blue" type="Submit">Continue</Button>
           </Form>
         </Card.Body>
       </Card>

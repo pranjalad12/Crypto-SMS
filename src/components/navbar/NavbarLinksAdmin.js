@@ -32,6 +32,7 @@ import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes';
 import PropTypes from 'prop-types'; // Add this import statement
+import ModalS from 'components/horizontalStepper/modals';
 
 
 export default function HeaderLinks(props) {
@@ -77,8 +78,8 @@ export default function HeaderLinks(props) {
       />
       
       {/* Button to Open Modal */}
-      <Button variant="solid" colorScheme="teal" onClick={onOpen} mr="10px">
-        Open Modal
+      <Button  colorScheme="twitter" onClick={onOpen} mr="10px">
+        SMS
       </Button>
 
       {/* Modal */}
@@ -92,19 +93,13 @@ export default function HeaderLinks(props) {
         >
           <ModalHeader>Modal Title</ModalHeader>
           <ModalBody>
-            <Text>Content goes here. Content goes here. Content goes here. Content goes here. Content goes here.Content goes here.</Text>
-            <Text>Content goes here.</Text>
-            <Text>Content goes here.</Text>
-            <Text>Content goes here.</Text>
-            <Text>Content goes here.</Text>
-            <Text>Content goes here.</Text>
-            <Text>Content goes here.</Text>
+            <ModalS/>
           </ModalBody>
           <ModalFooter>
             <Button variant="ghost" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme="blue">Save</Button>
+            {/* <Button colorScheme="blue">Generate QR Code</Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>

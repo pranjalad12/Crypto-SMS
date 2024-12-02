@@ -1,28 +1,55 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-
+import {
+  Avatar,
+  Button,
+  Flex,
+  Icon,
+  Image,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorModeValue,
+  useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from '@chakra-ui/react';
 const Final = ({ values }) => {
-
+  
     //destructuring the object from values
-  const { firstName, lastName, age, email } = values;
+  const { phoneNumber, age, passkey, amount} = values;
   return (
     <>
-      <Card style={{ marginTop: 100, textAlign: "left" }}>
+      <Card style={{ textAlign: "left" }}>
         <Card.Body>
+          <p>Your Account created succcessfully.</p>
+          <br/>
           <p>
-            <strong>First Name :</strong> {firstName}{" "}
+            <strong>Phone Number</strong> {phoneNumber}{" "}
+          </p>
+          
+          {/* <p>
+            <strong>OTP :</strong> {age}{" "}
+          </p> */}
+          <p>
+            <strong>passkey :</strong> {passkey}{" "}
           </p>
           <p>
-            <strong>Last Name :</strong> {lastName}{" "}
+            <strong> Max amount :</strong> {amount}{" "}
           </p>
-          <p>
-            <strong>Age :</strong> {age}{" "}
-          </p>
-          <p>
-            <strong>Email :</strong> {email}{" "}
-          </p>
+
         </Card.Body>
       </Card>
+            <br/>
+            <Button colorScheme="blue">Generate QR Code</Button>
     </>
   );
 };
