@@ -14,7 +14,11 @@ function ModalS() {
     OTP: "",
     passkey: "",
     amount: "",
+    language: "",
+    account: "",
+    cryptocurrency: "",
   });
+  
   const [qrCodeUrl, setUrl]=useState("https://img.freepik.com/premium-vector/vector-qr-code-sample-smartphone-scanning-isolated-white-background_255502-625.jpg")
 
   const nextStep = () => setStep(step + 1);
@@ -91,7 +95,7 @@ function ModalS() {
       <Container>
         <Row>
           <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-            <StepFour nextStep={nextStep} />
+            <StepFour nextStep={nextStep} values={formData}/>
           </Col>
         </Row>
       </Container>

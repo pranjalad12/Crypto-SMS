@@ -5,15 +5,16 @@ import {
   Image,
 } from '@chakra-ui/react';
 
+
 const Final = ({ values, qrCodeUrl }) => {
   // Destructuring the object from values
-  const { phoneNumber, age, passkey, amount } = values;
+  const { phoneNumber, age, passkey, amount,language, account, cryptocurrency } = values;
 
   return (
     <>
       <Card style={{ textAlign: "left" }}>
-        <Card.Body>
-          <p>Your Account created successfully.</p>
+        {/* <Card.Body>
+          <p>Scan your QR card.</p>
           <br />
           <p>
             <strong>Phone Number:</strong> {phoneNumber}{" "}
@@ -24,6 +25,20 @@ const Final = ({ values, qrCodeUrl }) => {
           </p>
           <p>
             <strong>Max Amount:</strong> {amount}{" "}
+          </p>
+        </Card.Body> */}
+        <Card.Body>
+          <p>Your Account created successfully.</p>
+          <br />
+          <p>
+            <strong>Language:</strong> {language}{" "}
+          </p>
+          
+          <p>
+            <strong>Account:</strong> {account}{" "}
+          </p>
+          <p>
+            <strong>Cryptocurrency:</strong> {cryptocurrency}{" "}
           </p>
         </Card.Body>
       </Card>
