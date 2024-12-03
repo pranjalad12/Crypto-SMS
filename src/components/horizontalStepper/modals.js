@@ -1,18 +1,19 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import StepOne from "./StepOne";
-import StepTwo from "./StepTwo";
-import StepThree from "./StepThree"; // Import StepThree
-import Final from "./Final";
-import StepFive from "./StepFive"; // Import StepFive
-import StepFour from "./StepFour";
+import StepOne from "./phoneNumberForm";
+import StepTwo from "./otpForm";
+import StepThree from "./passkey&amount"; // Import StepThree
+import Final from "./qrCodePage";
+import StepFive from "./generateQrForm"; // Import StepFive
+import StepFour from "./accountCreated";
 
 function ModalS() {
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
+    countryCode: "",
     phoneNumber: "",
-    OTP: "",
+    otp: "",
     passkey: "",
     amount: "",
     language: "",
@@ -113,6 +114,7 @@ function ModalS() {
               handleFormData={handleInputData}
               values={formData}
               nextStep={nextStep}
+              setQrCodeUrl={setUrl}
             />
           </Col>
         </Row>

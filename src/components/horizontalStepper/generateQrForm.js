@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import { Button, Select, FormControl, FormLabel, Flex } from "@chakra-ui/react";
+import {
+  Button,
+  Select,
+  FormControl,
+  FormLabel,
+  Flex,
+  Text,
+} from "@chakra-ui/react";
+import axios from "axios";
 
-const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
-  const languages = ["English", "Spanish", "French"];
-  const accounts = ["Account1", "Account2"];
-  const cryptocurrencies = ["Bitcoin", "Ethereum", "Litecoin"];
+const StepFive = ({ prevStep, handleFormData, values, nextStep, setQrCodeUrl }) => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const languages = ["English", "Hindi", "German", "Spanish", "French"];
+  const accounts = [
+    "0xDB43C56E14D41CeA246c0f61Cb1A4ffe5a7Ef6AB",
+    "0x5641d2662FD845aD86a627cD8181734C1b3335c0",
+  ];
+  const cryptocurrencies = ["Ethereum", "Bitcoin", "Litecoin", "USDC"];
 
-  const handleSave = () => {
-    nextStep();
+  const generateQrCode = async () => {
+    try {
+      // API call to /getQrCode
+      const response = await axios.post("http://localhost:4000/api/getQrCode", {
+        recipientAddress: values.account,
+        recipientCrypto: values.cryptocurrency,
+        language: values.language,
+      });
+
+      // Update the QR code URL in the parent state
+      setQrCodeUrl(response.data.qrCode);
+
+      // Proceed to the next step
+      nextStep();
+    } catch (err) {
+      console.error("Error generating QR code:", err.response?.data || err.message);
+      setErrorMessage(
+        err.response?.data?.error || "Failed to generate QR code. Please try again."
+      );
+    }
   };
 
   return (
@@ -94,16 +124,23 @@ const StepFive = ({ prevStep, handleFormData, values, nextStep }) => {
               </Select>
             </FormControl>
 
+            {/* Display error message if API call fails */}
+            {errorMessage && (
+              <Text color="red.500" mb="4">
+                {errorMessage}
+              </Text>
+            )}
+
             <Flex justifyContent="space-between" mt="4">
               <Button colorScheme="blue" onClick={prevStep}>
                 Previous
               </Button>
-              <Button colorScheme="green" onClick={handleSave}>
+              <Button colorScheme="green" onClick={generateQrCode}>
                 Generate
               </Button>
             </Flex>
           </form>
-          <br/>
+          <br />
         </Card.Body>
       </Card>
     </>

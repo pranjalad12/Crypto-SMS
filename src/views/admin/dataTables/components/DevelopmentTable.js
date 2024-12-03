@@ -177,7 +177,7 @@ export default function ComplexTable(props) {
         >
           Development Table
         </Text>
-        <Menu />
+        {/* <Menu /> */}
       </Flex>
       <Box>
         <Table variant="simple" color="gray.500" mb="24px" mt="18px">

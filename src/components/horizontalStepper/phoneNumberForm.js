@@ -10,19 +10,38 @@ import {
   CardBody,
   HStack,
 } from "@chakra-ui/react";
+import axios from "axios";
 
 const StepOne = ({ nextStep, handleFormData, values }) => {
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const submitFormData = (e) => {
+  const submitFormData = async (e) => {
     e.preventDefault();
     console.log("Phone Number in Submit:", values.phoneNumber);
     console.log("Country Code in Submit:", values.countryCode);
+    const fullPhoneNumber = `${values.countryCode}${values.phoneNumber}`;
     if (!values.phoneNumber || !values.countryCode) {
       setError(true);
-    } else {
+      setErrorMessage("Both fields are required or invalid");
+      return;
+    } 
+    try {
+      // Make API call to /verifyPhoneNumber
+      const response = await axios.post("http://localhost:4000/api/verifyPhoneNumber", {
+        phoneNumber: fullPhoneNumber,
+      });
+
+      // If successful, move to the next step
+      console.log("API Response:", response.data);
       setError(false);
+      setErrorMessage("");
       nextStep();
+    } catch (err) {
+      // Handle API errors
+      console.error("API Error:", err.response?.data || err.message);
+      setError(true);
+      setErrorMessage(err.response?.data?.error || "Something went wrong!");
     }
   };
 
@@ -37,9 +56,10 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
                 <Select
                   placeholder="Code"
                   value={values.countryCode}
-                  onChange={(e) =>
-                    handleFormData("countryCode", e.target.value)
-                  }
+                  onChange={(e) => {
+                    console.log("countryCode", e.target.value);
+                    handleFormData("countryCode", e.target.value);
+                  }}
                   color="white"
                   bg="transparent"
                   border="1px solid white"
@@ -81,15 +101,12 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
                 />
               </HStack>
               {error && (
-                <FormErrorMessage color="white">
-                  Both fields are required or invalid
-                </FormErrorMessage>
+                <FormErrorMessage color="white">{errorMessage}</FormErrorMessage>
               )}
             </FormControl>
             <Button colorScheme="blue" type="submit" width="100%">
-  Continue
-</Button>
-
+              Continue
+            </Button>
           </form>
         </CardBody>
       </Card>

@@ -7,7 +7,7 @@ const StepFour = ({ nextStep, values }) => {
     // Logic for generating QR Code can go here
     nextStep();
   };
-  const { phoneNumber, passkey, amount } = values;
+  const { phoneNumber, passkey, amount, countryCode } = values;
 
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px" }}>
@@ -16,7 +16,7 @@ const StepFour = ({ nextStep, values }) => {
           <p style={{ fontSize: "25px", fontWeight: "bold" }}>Your Account Created Successfully</p>
           <br />
           <p style={{ fontSize: "18px" }}>
-            <strong>Phone Number:</strong> {phoneNumber}{" "}
+            <strong>Phone Number:</strong> {countryCode}{" "}{phoneNumber}{" "}
           </p>
           <p style={{ fontSize: "18px" }}>
             <strong>Passkey:</strong> {passkey}{" "}

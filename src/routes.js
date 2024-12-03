@@ -28,15 +28,6 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: 'Dapps',
-    layout: '/admin',
-    path: '/default',
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-    component: <MainDashboard />,
-  },
-  
-
-  {
     name: 'Profile',
     layout: '/admin',
     path: '/profile',

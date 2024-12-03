@@ -65,20 +65,7 @@ export default function SidebarDocs() {
           Improve your transaction process and start doing more with Crytpo - SMS!
         </Text>
       </Flex>
-      <Link href='https://horizon-ui.com/pro?ref=horizon-chakra-free'>
-        <Button
-          bg='whiteAlpha.300'
-          _hover={{ bg: "whiteAlpha.200" }}
-          _active={{ bg: "whiteAlpha.100" }}
-          mb={{ sm: "16px", xl: "24px" }}
-          color={"white"}
-          fontWeight='regular'
-          fontSize='sm'
-          minW='185px'
-          mx='auto'>
-          Crypto - SMS
-        </Button>
-      </Link>
+      
     </Flex>
   );
 }

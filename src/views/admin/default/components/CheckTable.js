@@ -36,31 +36,6 @@ export default function CheckTable(props) {
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
   let defaultData = tableData;
   const columns = [
-    // columnHelper.accessor('name', {
-    //   id: 'name',
-    //   header: () => (
-    //     <Text
-    //       justifyContent="space-between"
-    //       align="center"
-    //       fontSize={{ sm: '10px', lg: '18px' }}
-    //       color="gray.400"
-    //     >
-    //       NAME
-    //     </Text>
-    //   ),
-    //   cell: (info) => (
-    //     <Flex align="center">
-    //       <Checkbox
-    //         defaultChecked={info.getValue()[1]}
-    //         colorScheme="brandScheme"
-    //         me="10px"
-    //       />
-    //       <Text color={textColor} fontSize="sm" fontWeight="700">
-    //         {info.getValue()[0]}
-    //       </Text>
-    //     </Flex>
-    //   ),
-    // }),
     columnHelper.accessor('Crypto', {
       id: 'Crypto',
       header: () => (
@@ -144,7 +119,7 @@ export default function CheckTable(props) {
         >
           Dashboard
         </Text>
-        <Menu />
+        {/* <Menu /> */}
       </Flex>
       <Box>
         <Table variant="simple" color="gray.500" mb="24px" mt="18px">
